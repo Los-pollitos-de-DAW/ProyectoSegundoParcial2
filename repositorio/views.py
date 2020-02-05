@@ -3,19 +3,19 @@ from django.utils import timezone
 from .models import *
 from rest_framework import generics
 from repositorio.serializers import *
+from rest_framework import viewsets
 
-class RolList(generics.ListCreateAPIView):
+class RolViewSet(viewsets.ModelViewSet):
     queryset = Rol.objects.all()
     serializer_class = RolSerializer
 
-class UsuarioList(generics.ListCreateAPIView):
+
+class UsuarioViewSet(viewsets.ModelViewSet):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
 
-class NoticiaList(generics.ListCreateAPIView):
+class NoticiaViewSet(viewsets.ModelViewSet):
     queryset = Noticia.objects.all()
     serializer_class = NoticiaSerializer
 
-class RolDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Rol.objects.all()
-    serializer_class = RolSerializer
+
