@@ -49,7 +49,7 @@ class ExamenViewSet(viewsets.ModelViewSet):
 def send_email():
     email = EmailMessage(
         'Title',
-        (ContactoSerializer.nombres, ContactoSerializer.correo, ContactoSerializer.tema,ContactoSerializer.mensaje),
+       'hola',
         'fksaxell1997@gmail.com',
         ['wipitik239@xmailsme.com']
     )
