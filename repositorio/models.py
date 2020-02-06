@@ -46,3 +46,10 @@ class Examen(models.Model):
     titulo=models.CharField(max_length=500)
     termino=models.CharField(max_length=500)
     url=models.CharField(max_length=500)
+
+class Contacto(models.Model):
+    nombres=models.CharField(max_length=500)
+    correo=models.CharField(max_length=500)
+    tema=models.CharField(max_length=500)
+    mensaje=models.CharField(max_length=800)
+

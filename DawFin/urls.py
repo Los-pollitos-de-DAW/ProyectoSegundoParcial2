@@ -31,8 +31,10 @@ router.register(r'descarga', views.DescargaViewSet)
 router.register(r'examen', views.ExamenViewSet)
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^', include(router.urls)),
+    path('email',views.ContactoAPI.as_view(),name="api_send_email"),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
