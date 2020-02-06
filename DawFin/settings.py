@@ -128,7 +128,7 @@ STATIC_URL = '/static/'
 # SMTP Mail service with decouple
 
 
-EMAIL_HOST = "smtp.hushmail.com"
+EMAIL_HOST = "smtp.gmail.com"
 EMAIL_HOST_USER = 'fksaxell1997@gmail.com'
 EMAIL_HOST_PASSWORD = 'Ka201611894'
 EMAIL_PORT = 587
