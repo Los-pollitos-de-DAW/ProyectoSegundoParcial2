@@ -11,4 +11,5 @@ admin.site.register(Registro)
 admin.site.register(Termino)
 admin.site.register(Descarga)
 admin.site.register(Examen)
+admin.site.register(Contacto)
 

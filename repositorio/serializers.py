@@ -70,6 +70,6 @@ class ContactoSerializer(serializers.Serializer):
         if len(correos)!=0:
             raise serializers.ValidationError('Este correo ya ha enviado un msj')
         else:
-            data
+            return data
 
 
