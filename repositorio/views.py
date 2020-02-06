@@ -7,7 +7,7 @@ from rest_framework import viewsets
 from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.response import Response
-
+from django.core.mail import EmailMessage
 
 class RolViewSet(viewsets.ModelViewSet):
     queryset = Rol.objects.all()
@@ -46,14 +46,23 @@ class ExamenViewSet(viewsets.ModelViewSet):
     queryset = Examen.objects.all()
     serializer_class = ExamenSerializer
 
-class ContactoAPI(APIView):
-    def post(self,request):
-        serializer=ContactoSerializer(data= request.data)
-        if serializer.is_valid():
-            contacto=serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+def send_email():
+    email = EmailMessage(
+        'Title',
+        (ContactoSerializer.nombres, ContactoSerializer.correo, ContactoSerializer.tema,ContactoSerializer.mensaje),
+        'fksaxell1997@gmail.com',
+        ['wipitik239@xmailsme.com']
+    )
+
+    email.send()
+class ContactoViewSet(viewsets.ModelViewSet):
+    queryset = Contacto.objects.all()
+    serializer_class =ContactoSerializer
+    def create(self, request, *args, **kwargs):
+        response = super(ContactoViewSet, self).create(request, *args, **kwargs)
+        send_email()  # sending mail
+        return response
+
 
 
 
