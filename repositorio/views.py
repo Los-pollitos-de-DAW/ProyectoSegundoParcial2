@@ -50,8 +50,8 @@ def send_email():
     email = EmailMessage(
         'Title',
        'hola',
-        'fksaxell1997@gmail.com',
-        ['wipitik239@xmailsme.com']
+        'kevin.concha.regatto@outlook.com',
+        ['kevin.concha.regatto@outlook.com']
     )
 
     email.send()
