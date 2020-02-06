@@ -133,5 +133,5 @@ EMAIL_HOST_USER = 'kevin.concha.regatto@outlook.com'
 EMAIL_HOST_PASSWORD = 'Ka201611894'
 EMAIL_PORT = 25
 EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
+EMAIL_USE_SSL = True
 
