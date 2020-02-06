@@ -21,6 +21,15 @@ from repositorio import views
 
 router = routers.DefaultRouter()
 router.register(r'noticia', views.NoticiaViewSet)
+router.register(r'rol', views.RolViewSet)
+router.register(r'usuario', views.UsuarioViewSet)
+router.register(r'carrera', views.CarreraViewSet)
+router.register(r'termino', views.TerminoViewSet)
+router.register(r'materia', views.MateriaViewSet)
+router.register(r'registro', views.RegistroViewSet)
+router.register(r'descarga', views.DescargaViewSet)
+router.register(r'examen', views.ExamenViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
